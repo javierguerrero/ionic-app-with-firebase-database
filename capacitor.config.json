@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "abm-firestore",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

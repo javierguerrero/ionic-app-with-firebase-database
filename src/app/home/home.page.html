@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Blank </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input
+    type="email"
+    placeholder="ingrese su email"
+    [(ngModel)]="user.email"
+  ></ion-input>
+  <ion-input
+    type="password"
+    placeholder="ingrese su password"
+    [(ngModel)]="user.password"
+  ></ion-input>
+  <ion-button (click)="createUser()">Alta usuario</ion-button>
+
+  <h3>Lista de usuarios</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList">
+        <td>{{ user.id }}</td>
+        <td>{{ user.email }}</td>
+        <td><button (click)="getById(user.id)">View</button></td>
+        <td><button (click)="delete(user.id)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ion-button (click)="update()">Modificar usuario</ion-button>
+
+</ion-content>
